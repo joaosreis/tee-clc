@@ -1,12 +1,12 @@
-# Maintainer: David Rodriguez <dissonant.tech@gmail.com>
+# Maintainer: João Reis <joaosreis@outlook.pt>
 pkgname=tee-clc
-pkgver=11.0.0
+pkgver=14.118.0
 pkgrel=1
 epoch=
-pkgdesc="Microsoft Visual Studio Team Explorer Everywhere 2012 - command-line client for Visual Studio 2012 Team Foundation Server"
+pkgdesc="Microsoft Visual Studio Team Explorer Everywhere - command-line client for Visual Studio 2012 Team Foundation Server"
 arch=(i686 x86_64)
-url="http://www.microsoft.com/en-us/download/details.aspx?id=30661"
-license=('custom:microsoftSoftwareLicense')
+url="https://github.com/Microsoft/team-explorer-everywhere"
+license=('MIT')
 groups=()
 depends=()
 makedepends=()
@@ -19,8 +19,8 @@ backup=()
 options=()
 install=install
 changelog=
-source=(http://download.microsoft.com/download/4/2/7/427AC2CF-8A5B-4DE9-8221-22F54B1903E2/TEE-CLC-${pkgver}.1212.zip)
-sha256sums=('d5b5fc31321a77581ad9848a0a37063b6ed982c8b242f8d08c81c5e969164608')
+source=(https://github.com/Microsoft/team-explorer-everywhere/releases/download/${pkgver}/TEE-CLC-${pkgver}.zip)
+sha256sums=('54a3c868ac57304e88e60d5d86a7363d913582b4527af8daa7e60515721894bd')
 
 package() {
   cd "$srcdir/TEE-CLC-$pkgver"
@@ -35,5 +35,3 @@ package() {
     cp -R native/linux/x86_64 ${pkgdir}/opt/tee-clc-${pkgver}/native/linux/
   fi
 }
-
-# vim:set ts=2 sw=2 et:
